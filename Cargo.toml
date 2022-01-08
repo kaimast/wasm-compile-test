@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+members = [
+    "simba",
+    "visualizer",
+    "simba-wasm",
+]
+
+[profile.release]
+opt-level = 3
+debug = true
+
+[profile.dev.build-override]
+opt-level = 3

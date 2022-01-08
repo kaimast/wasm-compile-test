@@ -1,0 +1,27 @@
+[package]
+name = "simba-visualizer"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Simulating Byzantine Fault-Tolerant Applications"
+
+[dependencies]
+simba = { path="../simba" }
+parking_lot = "0.11"
+log = "0.4"
+smaa = { version="0.5", optional=true }
+glam = { version="0.20", features=["bytemuck"] }
+iced = { git="https://github.com/pacmancoder/iced.git", branch="feat/wgpu-webgl" } #git="ssh://git@github.com/iced-rs/iced.git" }
+iced_winit = { git="https://github.com/pacmancoder/iced.git", branch="feat/wgpu-webgl" } #git="ssh://git@github.com/iced-rs/iced.git" }
+iced_wgpu = { git="https://github.com/pacmancoder/iced.git", branch="feat/wgpu-webgl" } #git="ssh://git@github.com/iced-rs/iced.git" }
+tokio = { version="1", features=["sync"], default-features=false }
+bytemuck = "1"
+futures = { version="0.3" }
+async-trait = "0.1"
+winit = { version="0.25", git="https://github.com/iced-rs/winit", rev="1e6623c4d06d110e5408dcbdf1edebd07e6a200e" }
+wgpu = { version="0.12", features=["spirv"] }
+instant = "0.1"
+enum-map = "1"
+
+[build-dependencies]
+spirv-builder = { git = "https://github.com/EmbarkStudios/rust-gpu" }

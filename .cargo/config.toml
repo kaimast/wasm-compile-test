@@ -1,0 +1,5 @@
+[target.'cfg(target_os = "linux")']
+rustflags = [
+  "-C", "linker=clang",
+  "-Z", "macro-backtrace",
+]

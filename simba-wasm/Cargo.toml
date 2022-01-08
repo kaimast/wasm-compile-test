@@ -1,0 +1,27 @@
+cargo-features = ["per-package-target"]
+
+[package]
+name = "simba-wasm"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Simulating Byzantine Fault-Tolerant Applications"
+forced-target = "wasm32-unknown-unknown"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+console_error_panic_hook = "0.1"
+simba-visualizer = { path="../visualizer" }
+simba = { path="../simba", features=["wasm"] }
+getrandom = { version="0.2", features=["js"] }
+wgpu = { version="0.12", features=["spirv", "webgl"] }
+winit = { version="0.25", git="https://github.com/iced-rs/winit", rev="1e6623c4d06d110e5408dcbdf1edebd07e6a200e" }
+iced_winit = { git="https://github.com/pacmancoder/iced.git", branch="feat/wgpu-webgl" } #git="ssh://git@github.com/iced-rs/iced.git" }
+web-sys = { version="0.3", features=["HtmlCanvasElement", "HtmlBodyElement", "Element", "Document", "Window"] }
+wasm-bindgen = "0.2"
+instant = "0.1"
+log = "0.4"
+console_log = { version="0.2", features=["color"] }
+tokio = { version="1", features=["rt"] }

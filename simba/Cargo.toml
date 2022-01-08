@@ -1,0 +1,32 @@
+[package]
+name = "simba"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Simulating Byzantine Fault-Tolerant Applications"
+
+[dependencies]
+log = "0.4"
+uint = "0.9"
+dashmap = "4"
+rand = { version="0.8", features=["getrandom"] }
+parking_lot = "0.11"
+glam = { version="0.20", features=["bytemuck"] }
+bytemuck = "1"
+futures = "0.3"
+async-trait = "0.1"
+getrandom = "0.2"
+num_cpus = "1"
+csv = "1"
+tokio = { version="1", features=["sync", "time", "rt-multi-thread", "macros"], default-features=false }
+instant = "0.1"
+serde = { version="1", features=["derive"] }
+tracing = { version="0.1" }
+ron = "0.7"
+
+#[patch.crates-io]
+#window_clipboard = { path="../window_clipboard" }
+
+[features]
+default = []
+wasm = ["parking_lot/wasm-bindgen", "getrandom/js"]
